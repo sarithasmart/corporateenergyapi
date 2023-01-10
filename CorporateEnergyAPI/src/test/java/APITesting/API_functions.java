@@ -9,7 +9,7 @@ import org.json.simple.JSONObject;
 
 public class API_functions {
 	
-	//@Test
+	@Test
 	public void test_get_1()
 	{
 		
@@ -18,7 +18,7 @@ public class API_functions {
 		System.out.println(response.getTime());		
 		Assert.assertEquals(statuscode, 200); 
 	}
-	//@Test
+	@Test
 	public void test_get_2() 
 	{
 		baseURI = "https://data.ct.gov/resource/y6p2-px98.json";
@@ -27,7 +27,7 @@ public class API_functions {
 		.then()
 		.statusCode(200).log().all();
 	}
-	//@Test
+	@Test
 	public void test_put1() {
 		
 		baseURI = "https://data.cityofchicago.org";
