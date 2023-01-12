@@ -13,6 +13,7 @@ public class API_functions {
 	public void test_get_1()
 	{
 		
+		System.out.println("_____test1 results___________");
 		Response response = get("https://data.cityofchicago.org/resource/6zsd-86xi/10666778.json");
 		int statuscode = response.getStatusCode();
 		System.out.println(response.getTime());		
@@ -21,6 +22,7 @@ public class API_functions {
 	@Test
 	public void test_get_2() 
 	{
+		System.out.println("_____test2 results___________");
 		baseURI = "https://data.ct.gov/resource/y6p2-px98.json";
 		given()
 		.get("?category=Fruit&farm_name=Karabin Farms&farmer_id=7243&item=Peaches")
@@ -30,6 +32,7 @@ public class API_functions {
 	@Test
 	public void test_put1() {
 		
+		System.out.println("_____test3 results___________");
 		baseURI = "https://data.cityofchicago.org";
 		JSONObject request = new JSONObject();
 		request.put("description", "testtestHARASSMENT BY ELECTRONIC MEANS");
@@ -43,12 +46,14 @@ public class API_functions {
 		.when()
 		.post("resource/6zsd-86xi/10666778.json")
 		.then()
-		.statusCode(200).log().all();
+		.log().all()
+		.statusCode(200);
 		
 		}
 		
 	@Test
 	public void test_delete() {
+		System.out.println("_____test4 results___________");
 		baseURI = "https://data.cityofchicago.org";
 		given()
 		.auth()
@@ -59,7 +64,8 @@ public class API_functions {
 		.when()
 		.delete("resource/6zsd-86xi/10666778.json")
 		.then()
-		.statusCode(200).log().all();
+		.log().all()
+		.statusCode(200);
 		
 	}
 	}
